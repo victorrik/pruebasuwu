@@ -1,17 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import { BrowserRouter , Switch, Route  } from "react-router-dom";
+import Ckeditor from './ck/Ckeditor';  
+import Grape from './grapa/Grape';
+import Three from './three/three';  
+import Fuego from './firebase/firebase';  
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+ReactDOM.render( 
+    <BrowserRouter >
+      <Switch> 
+        <Route exact path="/ck" component={Ckeditor} />  
+        <Route exact path="/grapa" component={Grape} />  
+        <Route exact path="/tresde" component={Three} />  
+        <Route exact path="/fuego" component={Fuego} />      
+      </Switch>
+    </BrowserRouter> ,
   document.getElementById('root')
-);
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+); 
